@@ -1,84 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision Auto Performance & Audio | About Us</title>
-</head>
-<body>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Precision Auto Performance &amp; Audio | About Us</title>
 
-    <header>
-        <h1>Precision Auto Performance & Audio</h1>
-        <p><em>About Our Workshop</em></p>
-        
-        <nav>
-            <p><strong>Navigation Menu:</strong></p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="enquiry.html">Fitment Enquiry</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9fa",
+                        "secondary-container": "#e3e1ec",
+                        "surface-container-highest": "#e2e2e3",
+                        "primary": "#000000",
+                        "inverse-primary": "#c6c6c6",
+                        "wireframe-border": "#A1A1AA",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary-fixed": "#e3e1ec",
+                        "on-secondary-container": "#63646c",
+                        "tertiary-container": "#1b1b1b",
+                        "on-primary-container": "#848484",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f9f9fa",
+                        "tertiary": "#000000",
+                        "blueprint-blue-tint": "#EFF6FF",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-container": "#eeeeef",
+                        "outline-variant": "#cfc4c5",
+                        "secondary-fixed-dim": "#c6c5cf",
+                        "surface-dim": "#dadadb",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "on-surface-variant": "#4c4546",
+                        "surface-container-high": "#e8e8e9",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-surface": "#2f3132",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        "placeholder-bg": "#E4E4E7",
+                        "primary-fixed": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1d",
+                        "secondary": "#5d5e66",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-variant": "#e2e2e3",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "on-surface": "#1a1c1d",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9fa",
+                        "on-tertiary-container": "#848484"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "max-width": "1280px",
+                        "margin-mobile": "16px",
+                        base: "8px",
+                        gutter: "24px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-caps": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-lg-mobile": ["Geist", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "label-mono": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blueprint-placeholder {
+            background-color: #E4E4E7;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #A1A1AA;
+        }
+        .blueprint-placeholder::before,
+        .blueprint-placeholder::after {
+            content: '';
+            position: absolute;
+            background-color: #A1A1AA;
+        }
+        .blueprint-placeholder::before {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+            transform: rotate(45deg);
+        }
+        .blueprint-placeholder::after {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            right: 0;
+            transform-origin: top right;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+    <header class="bg-surface-lowest dark:bg-surface-container-lowest w-full top-0 sticky border-b border-wireframe-border z-50">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <div>
+                <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary block">
+                    Precision Auto Performance &amp; Audio
+                </a>
+                <p class="hidden lg:block text-xs text-on-surface-variant italic">
+                    Pietermaritzburg's Premier Fitment, Custom Stance &amp; Audio Workshop
+                </p>
+            </div>
+            <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
+                <a class="text-on-secondary-container cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="text-on-secondary-container cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+            </nav>
+            <button class="md:hidden p-2 text-primary border border-wireframe-border flex items-center justify-center">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
     </header>
 
-    <hr>
-
-    <main>
-        <section>
-            <h2>Company Background & History</h2>
-            <p>Operating since 2021 from 928 Victoria Road in Pietermaritzburg, Precision Auto Performance & Audio has grown into a leading independent automotive fitment and custom audio centre in the KZN Midlands region.</p>
-            <p>Our workshop was founded to provide vehicle owners with professional-grade stance modifications, exact wheel fitments and high-performance car audio tuning built on technical accuracy and safety standards.</p>
+    <main class="flex-grow">
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 border-b border-wireframe-border">
+            <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider block mb-2">Workshop Profile</span>
+            <h1 class="font-headline-lg text-headline-lg text-primary mb-3">About Precision Auto PMB</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+                Since 2021, our team has built a reputation for expertly balancing performance styling, precision fitment, and dependable automotive electronics for local drivers around Pietermaritzburg.
+            </p>
         </section>
 
-        <hr>
-
-        <section>
-            <h2>Mission & Vision</h2>
-            <p><strong>Mission Statement:</strong> Precision Auto Performance & Audio aims to deliver high-tier automotive aesthetic, acoustic and fitment upgrades to the Pietermaritzburg motoring community through specialized local technical craftsmanship.</p>
-            <p><strong>Vision Statement:</strong> The business envisions becoming the KwaZulu-Natal Midlands region's preferred automotive customization workshop by setting industry standards for reliability, safety compliance and cutting-edge audio engineering.</p>
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+                <div class="md:col-span-7">
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-8">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-5">Company Background &amp; History</h2>
+                        <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+                            <p>Operating from 928 Victoria Road in Pietermaritzburg, Precision Auto Performance &amp; Audio has grown into a leading independent automotive fitment and custom audio centre serving the KZN Midlands region.</p>
+                            <p>Our workshop was founded to deliver professional-grade stance modifications, exact wheel fitments, and high-performance audio tuning with technical precision and road-safe workmanship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5">
+                    <div class="bg-surface-container-lowest border border-wireframe-border rounded h-[260px] flex items-center justify-center p-6">
+                        <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider text-center">
+                            Precision Engineering
+                        </span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <hr>
+        <section class="bg-surface-bright border-y border-wireframe-border">
+            <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+                <div class="mb-10">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Mission &amp; Vision</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">A local workshop built on craftsmanship, safety, and trust.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-8">
+                        <p class="font-label-caps text-label-caps uppercase text-primary mb-3">Mission Statement</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Precision Auto Performance &amp; Audio aims to deliver high-tier automotive aesthetic, acoustic, and fitment upgrades to the Pietermaritzburg motoring community through specialized local technical craftsmanship.</p>
+                    </div>
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-8">
+                        <p class="font-label-caps text-label-caps uppercase text-primary mb-3">Vision Statement</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">We aim to become the KwaZulu-Natal Midlands region's preferred automotive customization workshop by setting standards for reliability, safety compliance, and cutting-edge audio engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section>
-            <h2>Workshop Standards & Expertise</h2>
-            <table border="1" cellpadding="10" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Department</th>
-                        <th>Specialisation</th>
-                        <th>Standards & Quality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Custom Audio</td>
-                        <td>Monoblock amplifiers, enclosure volume calculation and DSP tuning</td>
-                        <td>High-current fused power wiring and acoustic dampening</td>
-                    </tr>
-                    <tr>
-                        <td>Stance & Fitment</td>
-                        <td>Suspension lowering, wheel offset calculation, tyre mounting</td>
-                        <td>Strict wheel alignment and road safety compliance</td>
-                    </tr>
-                    <tr>
-                        <td>Auto Electrical</td>
-                        <td>Fault diagnostics, relay wiring, fuse box repairs</td>
-                        <td>OEM-spec wiring harnesses and circuit isolation</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+            <div class="mb-10">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Workshop Standards &amp; Expertise</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">Three specialist departments, each driven by technical precision and quality control.</p>
+            </div>
+            <div class="overflow-hidden border border-wireframe-border">
+                <table class="w-full border-collapse bg-surface-container-lowest text-left">
+                    <thead class="bg-surface-container">
+                        <tr>
+                            <th class="p-4 font-label-caps text-label-caps uppercase text-primary border-b border-wireframe-border">Department</th>
+                            <th class="p-4 font-label-caps text-label-caps uppercase text-primary border-b border-wireframe-border">Specialisation</th>
+                            <th class="p-4 font-label-caps text-label-caps uppercase text-primary border-b border-wireframe-border">Standards &amp; Quality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-wireframe-border">
+                            <td class="p-4 font-body-md text-body-md text-primary">Custom Audio</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">Monoblock amplifiers, enclosure volume calculation and DSP tuning</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">High-current fused wiring and acoustic dampening</td>
+                        </tr>
+                        <tr class="border-b border-wireframe-border">
+                            <td class="p-4 font-body-md text-body-md text-primary">Stance &amp; Fitment</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">Suspension lowering, wheel offset calculation, tyre mounting</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">Strict wheel alignment and road safety compliance</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-body-md text-body-md text-primary">Auto Electrical</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">Fault diagnostics, relay wiring, fuse box repairs</td>
+                            <td class="p-4 font-body-md text-body-md text-on-surface-variant">OEM-spec wiring harnesses and circuit isolation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
-    <hr>
-
-    <footer>
-        <p><strong>Precision Auto Performance & Audio</strong> | Victoria Road, Pietermaritzburg</p>
-        
+    <footer class="bg-surface-bright dark:bg-surface-dim w-full mt-auto border-t border-wireframe-border">
+        <div class="flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto gap-gutter">
+            <div class="font-headline-md text-headline-md text-primary font-bold text-center">
+                Precision Auto Performance &amp; Audio
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6 font-label-mono text-label-mono">
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="index.html">Home</a>
+                <a class="text-primary underline cursor-pointer hover:underline" href="about.html">About Us</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container max-w-3xl mt-4">
+                <p><strong>Precision Auto Performance &amp; Audio</strong> | Victoria Road, Pietermaritzburg</p>
+                <p>&copy; <span id="year">2025</span> Precision Auto Performance &amp; Audio. All rights reserved.</p>
+            </div>
+        </div>
+        <script>
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        </script>
     </footer>
-
 </body>
 </html>

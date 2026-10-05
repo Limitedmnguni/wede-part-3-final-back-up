@@ -1,98 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision Auto Performance & Audio | Home</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Precision Auto Performance &amp; Audio | Home</title>
+    
+    <!-- Tailwind CSS Engine with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- External Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f9f9fa",
+                        "secondary-container": "#e3e1ec",
+                        "surface-container-highest": "#e2e2e3",
+                        "primary": "#000000",
+                        "inverse-primary": "#c6c6c6",
+                        "wireframe-border": "#A1A1AA",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1a1b22",
+                        "secondary-fixed": "#e3e1ec",
+                        "on-secondary-container": "#63646c",
+                        "tertiary-container": "#1b1b1b",
+                        "on-primary-container": "#848484",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f9f9fa",
+                        "tertiary": "#000000",
+                        "blueprint-blue-tint": "#EFF6FF",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-container": "#eeeeef",
+                        "outline-variant": "#cfc4c5",
+                        "secondary-fixed-dim": "#c6c5cf",
+                        "surface-dim": "#dadadb",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "on-surface-variant": "#4c4546",
+                        "surface-container-high": "#e8e8e9",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-surface": "#2f3132",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        "placeholder-bg": "#E4E4E7",
+                        "primary-fixed": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1d",
+                        "secondary": "#5d5e66",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-variant": "#e2e2e3",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "on-surface": "#1a1c1d",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9fa",
+                        "on-tertiary-container": "#848484"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-caps": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "headline-lg-mobile": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blueprint-placeholder {
+            background-color: #E4E4E7;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #A1A1AA;
+        }
+        .blueprint-placeholder::before,
+        .blueprint-placeholder::after {
+            content: '';
+            position: absolute;
+            background-color: #A1A1AA;
+        }
+        .blueprint-placeholder::before {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+            transform: rotate(45deg);
+        }
+        .blueprint-placeholder::after {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            right: 0;
+            transform-origin: top right;
+            transform: rotate(-45deg);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
 
-    <!-- Main Site Header -->
-    <header>
-        <h1>Precision Auto Performance & Audio</h1>
-        <p><em>Pietermaritzburg's Premier Fitment, Custom Stance & Audio Workshop</em></p>
-        
-        <!-- Site Navigation -->
-        <nav>
-            <p><strong>Navigation Menu:</strong></p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="enquiry.html">Fitment Enquiry</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    <!-- Header Section -->
+    <header class="bg-surface-lowest dark:bg-surface-container-lowest w-full top-0 sticky border-b border-wireframe-border z-50">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <div>
+                <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary block">
+                    Precision Auto Performance &amp; Audio
+                </a>
+                <p class="hidden lg:block text-xs text-on-surface-variant italic">
+                    Pietermaritzburg's Premier Fitment, Custom Stance &amp; Audio Workshop
+                </p>
+            </div>
+            <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-on-secondary-container dark:text-on-secondary-fixed-variant cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="text-on-secondary-container dark:text-on-secondary-fixed-variant cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container dark:text-on-secondary-fixed-variant cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container dark:text-on-secondary-fixed-variant cursor-pointer active:opacity-70 hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+            </nav>
+            <button class="md:hidden p-2 text-primary border border-wireframe-border flex items-center justify-center">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
     </header>
 
-    <hr>
-
     <!-- Main Content Area -->
-    <main>
+    <main class="flex-grow">
         
         <!-- Hero Section -->
-        <section>
-            <h2>Precision Automotive Customisation in Pietermaritzburg</h2>
-            <p>Welcome to Precision Auto Performance & Audio. Based on Victoria Road in PMB, we specialize in stance suspension builds, low-profile wheel fitments, custom monoblock and subwoofer car audio installations, and auto electrical servicing.</p>
-            <p>
-                <a href="enquiry.html"><strong>[ Request a Fitment Quote ]</strong></a>
-              
-                <a href="services.html"><strong>[ View Services & Pricing ]</strong></a>
-            </p>
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-wireframe-border">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-7 flex flex-col gap-6">
+                    <h1 class="text-[32px] md:text-[40px] font-bold leading-tight tracking-tight text-primary">
+                        Precision Automotive Customisation in Pietermaritzburg
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Welcome to Precision Auto Performance &amp; Audio. Based on Victoria Road in PMB, we specialize in stance suspension builds, low-profile wheel fitments, custom monoblock and subwoofer car audio installations, and auto electrical servicing.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <a href="enquiry.html" class="px-6 py-3 bg-primary text-on-primary border border-primary font-label-caps text-label-caps uppercase hover:bg-tertiary-container transition-colors inline-block text-center">
+                            Request a Fitment Quote
+                        </a>
+                        <a href="services.html" class="px-6 py-3 bg-transparent text-primary border border-primary font-label-caps text-label-caps uppercase hover:bg-surface-container transition-colors inline-block text-center">
+                            View Services &amp; Pricing
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-5 w-full h-[320px] md:h-[400px] overflow-hidden rounded border border-wireframe-border bg-surface-container-lowest">
+                    <img src="assets/home.jpg" alt="Precision Auto Performance & Audio workshop" class="w-full h-full object-cover" />
+                </div>
+            </div>
         </section>
 
-        <hr>
+        <!-- Services Grid Section -->
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-wireframe-border">
+            <div class="mb-12 flex justify-between items-end">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Our Core Workshop Services</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Precision engineered solutions for your vehicle.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                
+                <!-- Card 1 -->
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">build</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Stance &amp; Wheel Fitment</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Coilover lowering kits, stance suspension setups, low-profile tyre stretch, and precision alloy wheel alignment.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
 
-        <!-- Core Workshop Services -->
-        <section>
-            <h2>Our Core Workshop Services</h2>
-            <table border="1" cellpadding="10" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Stance & Wheel Fitment</th>
-                        <th>Custom Car Audio & Tuning</th>
-                        <th>Auto Electrical Maintenance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Coilover lowering kits, stance suspension setups, low-profile tyre stretch, and precision alloy wheel alignment.</td>
-                        <td>Monoblock and multi-channel amplifier wiring, custom subwoofer enclosure builds, and DSP audio signal tuning.</td>
-                        <td>Complete auto electrical diagnostics, fuse box maintenance, battery testing, and custom wiring harness repairs.</td>
-                    </tr>
-                </tbody>
-            </table>
+                <!-- Card 2 -->
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">speaker</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Custom Car Audio &amp; Tuning</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Monoblock and multi-channel amplifier wiring, custom subwoofer enclosure builds, and DSP audio signal tuning.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">electric_bolt</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Auto Electrical Maintenance</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Complete auto electrical diagnostics, fuse box maintenance, battery testing, and custom wiring harness repairs.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+            </div>
         </section>
 
-        <hr>
+        <!-- Direct Action / Why Choose Us Section -->
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-wireframe-border">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Why Choose Precision Auto PMB?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-10">
+                <div class="p-6 border border-wireframe-border bg-surface-container-lowest">
+                    <h4 class="font-label-caps text-label-caps text-primary uppercase mb-2">Local Expertise</h4>
+                    <p class="text-body-md text-on-surface-variant">Serving Pietermaritzburg and the KZN Midlands with dedicated technical craftsmanship.</p>
+                </div>
+                <div class="p-6 border border-wireframe-border bg-surface-container-lowest">
+                    <h4 class="font-label-caps text-label-caps text-primary uppercase mb-2">Quality Components</h4>
+                    <p class="text-body-md text-on-surface-variant">Premium audio brands and certified stance and wheel hardware.</p>
+                </div>
+                <div class="p-6 border border-wireframe-border bg-surface-container-lowest">
+                    <h4 class="font-label-caps text-label-caps text-primary uppercase mb-2">Tailored Builds</h4>
+                    <p class="text-body-md text-on-surface-variant">Every setup customized to your vehicle's specific specifications.</p>
+                </div>
+            </div>
 
-        <!-- Direct Action Section -->
-        <section>
-            <h2>Why Choose Precision Auto PMB?</h2>
-            <ul>
-                <li><strong>Local Expertise:</strong> Serving Pietermaritzburg and the KZN Midlands with dedicated technical craftsmanship.</li>
-                <li><strong>Quality Components:</strong> Premium audio brands and certified stance and wheel hardware.</li>
-                <li><strong>Tailored Builds:</strong> Every setup customized to your vehicle's specific specifications.</li>
-            </ul>
-            <p><a href="enquiry.html">Submit an Online Booking Request </a></p>
+            <a href="enquiry.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-label-caps text-label-caps uppercase hover:bg-tertiary-container transition-colors">
+                Submit an Online Booking Request <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+        </section>
+
+        <!-- Service Directory Table Section -->
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Service Directory</h2>
+            <div class="border border-wireframe-border bg-surface-container-lowest overflow-x-auto">
+                <div class="min-w-[600px]">
+                    <div class="grid grid-cols-12 border-b border-wireframe-border bg-surface-bright p-4 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">
+                        <div class="col-span-3">Category</div>
+                        <div class="col-span-6">Service Description</div>
+                        <div class="col-span-3">Location</div>
+                    </div>
+                    <div class="grid grid-cols-12 border-b border-wireframe-border p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Car Audio</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Monoblock Amp &amp; Subwoofer Installation</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">Victoria Road, PMB</div>
+                    </div>
+                    <div class="grid grid-cols-12 border-b border-wireframe-border p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Stance / Wheels</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Low Profile Fitment &amp; Suspension Tuning</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">Victoria Road, PMB</div>
+                    </div>
+                    <div class="grid grid-cols-12 p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Auto Electrical</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Wiring Harness Diagnostics &amp; Repairs</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">Victoria Road, PMB</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <hr>
-
-    <!-- Site Footer -->
-    <footer>
-        <p><strong>Precision Auto Performance & Audio</strong></p>
-        <p>Victoria Road, Pietermaritzburg, KwaZulu-Natal | Phone: +27 (0)33 592 8367 | Email: precisionpmb@gmail.com</p>
-        <p>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About Us</a> | 
-            <a href="services.html">Services</a> | 
-            <a href="enquiry.html">Enquiry</a> | 
-            <a href="contact.html">Contact</a>
-        </p>
-        
+    <!-- Footer Section -->
+    <footer class="bg-surface-bright dark:bg-surface-dim w-full mt-auto border-t border-wireframe-border">
+        <div class="flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto gap-gutter">
+            <div class="font-headline-md text-headline-md text-primary font-bold text-center">
+                Precision Auto Performance &amp; Audio
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6 font-label-mono text-label-mono">
+                <a class="text-primary underline cursor-pointer hover:underline" href="index.html">Home</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="about.html">About Us</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container cursor-pointer hover:underline" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container max-w-3xl mt-4">
+                Victoria Road, Pietermaritzburg, KwaZulu-Natal | Phone: +27 (0)33 592 8367 | Email: precisionpmb@gmail.com
+            </div>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container text-xs">
+                &copy; 2026 Precision Auto Performance &amp; Audio. All Rights Reserved.
+            </div>
+        </div>
     </footer>
 
 </body>
