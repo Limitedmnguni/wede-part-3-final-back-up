@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Precision Auto Performance &amp; Audio | Pelham, Pietermaritzburg</title>
+    <meta name="description" content="Precision Auto Performance & Audio at 25 Melville Road, Pelham, Pietermaritzburg. Specialists in custom car audio, monoblock amplifiers, stance coilovers, wheel fitment and auto electrical repairs."/>
+    <meta name="keywords" content="Car Audio Pietermaritzburg, Stance Fitment Pelham, Coilovers PMB, Auto Electrical Pietermaritzburg, Precision Auto Performance"/>
+    <meta name="author" content="Aphile Mncwabe"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f9f9fa",
+                        "primary": "#000000",
+                        "wireframe-border": "#A1A1AA",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#63646c",
+                        "tertiary-container": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "surface-container-high": "#e8e8e9",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1d",
+                        "background": "#f9f9fa"
+                    },
+                    "spacing": {
+                        "max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-caps": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blueprint-placeholder {
+            background-color: #E4E4E7;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #A1A1AA;
+        }
+        .blueprint-placeholder::before,
+        .blueprint-placeholder::after {
+            content: '';
+            position: absolute;
+            background-color: #A1A1AA;
+        }
+        .blueprint-placeholder::before {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+            transform: rotate(45deg);
+        }
+        .blueprint-placeholder::after {
+            width: 141.4%;
+            height: 1px;
+            top: 0;
+            right: 0;
+            transform-origin: top right;
+            transform: rotate(-45deg);
+        }
+
+        .animate-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .animate-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+
+    <header class="bg-surface-container-lowest w-full top-0 sticky border-b border-wireframe-border z-[1000]">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-4 gap-6">
+            <div class="shrink-0">
+                <a href="index.html" class="font-headline-md text-xl md:text-headline-md font-bold text-primary block">
+                    Precision Auto Performance &amp; Audio
+                </a>
+                <p class="hidden xl:block text-xs text-on-surface-variant italic">
+                    25 Melville Road, Pelham, Pietermaritzburg — Fitment, Stance &amp; Audio Workshop
+                </p>
+            </div>
+            <nav class="hidden md:flex gap-6 items-center font-body-md text-body-md whitespace-nowrap">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html">Home</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+            </nav>
+            <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-primary border border-wireframe-border flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-wireframe-border px-margin-mobile py-4 flex flex-col gap-3 font-body-md">
+            <a class="text-primary font-bold" href="index.html">Home</a>
+            <a class="text-on-secondary-container hover:text-primary" href="about.html">About Us</a>
+            <a class="text-on-secondary-container hover:text-primary" href="services.html">Products &amp; Services</a>
+            <a class="text-on-secondary-container hover:text-primary" href="enquiry.html">Fitment Enquiry</a>
+            <a class="text-on-secondary-container hover:text-primary" href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-wireframe-border">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-7 flex flex-col gap-6">
+                    <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">25 Melville Road, Pelham, PMB</span>
+                    <h1 class="text-[32px] md:text-[40px] font-bold leading-tight tracking-tight text-primary">
+                        Precision Automotive Customisation in Pietermaritzburg
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Welcome to Precision Auto Performance &amp; Audio. Located at 25 Melville Road in Pelham, we specialize in stance suspension builds, low-profile wheel fitments, custom monoblock and subwoofer car audio installations and auto electrical servicing.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <a href="enquiry.html" class="px-6 py-3 bg-primary text-on-primary border border-primary font-label-caps text-label-caps uppercase hover:bg-tertiary-container transition-colors inline-block text-center">
+                            Request a Fitment Quote
+                        </a>
+                        <a href="services.html" class="px-6 py-3 bg-transparent text-primary border border-primary font-label-caps text-label-caps uppercase hover:bg-surface-container transition-colors inline-block text-center">
+                            View Services &amp; Pricing
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-5 w-full h-[320px] md:h-[400px] overflow-hidden rounded border border-wireframe-border shadow-sm" role="img" aria-label="Precision Auto Performance & Audio Pelham workshop and vehicle image">
+                    <img src="assets/home.jpg" alt="Precision Auto Performance & Audio Pelham workshop and vehicle" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-wireframe-border">
+            <div class="mb-12 flex justify-between items-end">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Our Core Workshop Services</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Precision engineered solutions for your vehicle.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">build</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Stance &amp; Wheel Fitment</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Coilover lowering kits, stance suspension setups, low-profile tyre stretch and precision alloy wheel alignment.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">speaker</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Custom Car Audio &amp; Tuning</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Monoblock and multi-channel amplifier wiring, custom subwoofer enclosure builds and DSP audio signal tuning.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex flex-col gap-4 hover:border-primary transition-colors group">
+                    <div class="w-12 h-12 border border-wireframe-border flex items-center justify-center bg-surface-bright group-hover:border-primary">
+                        <span class="material-symbols-outlined text-primary">electric_bolt</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary">Auto Electrical Maintenance</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Complete auto electrical diagnostics, fuse box maintenance, battery testing and custom wiring harness repairs.
+                    </p>
+                    <a href="services.html" class="mt-4 border-t border-wireframe-border pt-4 text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:underline">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Service Directory</h2>
+            <div class="border border-wireframe-border bg-surface-container-lowest overflow-x-auto">
+                <div class="min-w-[600px]">
+                    <div class="grid grid-cols-12 border-b border-wireframe-border bg-surface-bright p-4 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">
+                        <div class="col-span-3">Category</div>
+                        <div class="col-span-6">Service Description</div>
+                        <div class="col-span-3">Location</div>
+                    </div>
+                    <div class="grid grid-cols-12 border-b border-wireframe-border p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Car Audio</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Monoblock Amp &amp; Subwoofer Installation</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">25 Melville Rd, Pelham</div>
+                    </div>
+                    <div class="grid grid-cols-12 border-b border-wireframe-border p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Stance / Wheels</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Low Profile Fitment &amp; Suspension Tuning</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">25 Melville Rd, Pelham</div>
+                    </div>
+                    <div class="grid grid-cols-12 p-4 items-center hover:bg-surface-container-low transition-colors">
+                        <div class="col-span-3 font-body-md text-body-md text-primary font-medium">Auto Electrical</div>
+                        <div class="col-span-6 font-body-md text-body-md text-on-surface-variant">Wiring Harness Diagnostics &amp; Repairs</div>
+                        <div class="col-span-3 font-label-mono text-label-mono text-on-surface-variant">25 Melville Rd, Pelham</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-bright w-full mt-auto border-t border-wireframe-border">
+        <div class="flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto gap-gutter">
+            <div class="font-headline-md text-headline-md text-primary font-bold text-center">
+                Precision Auto Performance &amp; Audio
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6 font-label-mono text-label-mono">
+                <a class="text-primary underline" href="index.html">Home</a>
+                <a class="text-on-secondary-container hover:underline" href="about.html">About Us</a>
+                <a class="text-on-secondary-container hover:underline" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container hover:underline" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-on-secondary-container hover:underline" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container max-w-3xl mt-4">
+                25 Melville Road, Pelham, Pietermaritzburg, KwaZulu-Natal | Phone: +27 (0)33 592 8367 | Email: precisionpmb@gmail.com
+            </div>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container text-xs">
+                &copy; 2026 Precision Auto Performance &amp; Audio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

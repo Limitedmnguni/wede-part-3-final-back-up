@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us | Precision Auto Performance &amp; Audio Pelham</title>
+    <meta name="description" content="Visit Precision Auto Performance & Audio at 25 Melville Road, Pelham, Pietermaritzburg, 3201. Call +27 (0)33 592 8367 or email precisionpmb@gmail.com."/>
+    <meta name="keywords" content="Precision Auto Location Pelham, 25 Melville Road Pietermaritzburg, Car Audio Shop Directions PMB"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f9f9fa",
+                        "primary": "#000000",
+                        "wireframe-border": "#A1A1AA",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#63646c",
+                        "on-surface-variant": "#4c4546",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1d",
+                        "background": "#f9f9fa"
+                    },
+                    "spacing": {
+                        "max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "label-caps": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .animate-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+
+    <header class="bg-surface-container-lowest w-full top-0 sticky border-b border-wireframe-border z-[1000]">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-4 gap-6">
+            <div class="shrink-0">
+                <a href="index.html" class="font-headline-md text-xl md:text-headline-md font-bold text-primary block">
+                    Precision Auto Performance &amp; Audio
+                </a>
+                <p class="hidden xl:block text-xs text-on-surface-variant italic">
+                    25 Melville Road, Pelham, Pietermaritzburg — Fitment, Stance &amp; Audio Workshop
+                </p>
+            </div>
+            <nav class="hidden md:flex gap-6 items-center font-body-md text-body-md whitespace-nowrap">
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container hover:text-primary transition-colors" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="contact.html">Contact Us</a>
+            </nav>
+            <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-primary border border-wireframe-border flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-wireframe-border px-margin-mobile py-4 flex flex-col gap-3 font-body-md">
+            <a class="text-on-secondary-container hover:text-primary" href="index.html">Home</a>
+            <a class="text-on-secondary-container hover:text-primary" href="about.html">About Us</a>
+            <a class="text-on-secondary-container hover:text-primary" href="services.html">Products &amp; Services</a>
+            <a class="text-on-secondary-container hover:text-primary" href="enquiry.html">Fitment Enquiry</a>
+            <a class="text-primary font-bold" href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 border-b border-wireframe-border">
+            <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider block mb-2">Location &amp; Hours</span>
+            <h1 class="font-headline-lg text-headline-lg text-primary mb-2">Contact Precision Auto PMB</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                Visit our workshop at 25 Melville Road, Pelham, or reach out via phone or email for advice on sound tuning, coilovers, or auto electrical diagnosis.
+            </p>
+        </section>
+
+        <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <div class="md:col-span-5 flex flex-col gap-6">
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl mt-1">location_on</span>
+                        <div>
+                            <h3 class="font-label-caps text-label-caps uppercase text-primary mb-1">Workshop Address</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">25 Melville Road, Pelham, Pietermaritzburg, 3201, KwaZulu-Natal</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl mt-1">call</span>
+                        <div>
+                            <h3 class="font-label-caps text-label-caps uppercase text-primary mb-1">Direct Line</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">+27 (0)33 592 8367</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-wireframe-border bg-surface-container-lowest p-6 flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-2xl mt-1">mail</span>
+                        <div>
+                            <h3 class="font-label-caps text-label-caps uppercase text-primary mb-1">Email Inquiries</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">precisionpmb@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-wireframe-border bg-surface-bright p-6">
+                        <h3 class="font-label-caps text-label-caps uppercase text-primary mb-3">Operating Hours</h3>
+                        <div class="space-y-2 font-label-mono text-label-mono text-on-surface-variant">
+                            <div class="flex justify-between border-b border-wireframe-border pb-1">
+                                <span>Mon – Fri:</span>
+                                <span>08:00 – 17:00</span>
+                            </div>
+                            <div class="flex justify-between border-b border-wireframe-border pb-1">
+                                <span>Saturday:</span>
+                                <span>08:00 – 13:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sun &amp; Public Holidays:</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaflet Interactive Map Container -->
+                <div class="md:col-span-7 border border-wireframe-border bg-surface-container-lowest rounded overflow-hidden flex flex-col">
+                    <div class="bg-surface-bright px-4 py-3 border-b border-wireframe-border flex justify-between items-center">
+                        <span class="font-label-mono text-label-mono text-primary uppercase">Interactive Leaflet Map — 25 Melville Road, Pelham</span>
+                        <span class="material-symbols-outlined text-sm text-primary">pin_drop</span>
+                    </div>
+                    <div id="workshop-map" class="w-full h-full min-h-[420px] z-10"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-bright w-full mt-auto border-t border-wireframe-border">
+        <div class="flex flex-col items-center py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto gap-gutter">
+            <div class="font-headline-md text-headline-md text-primary font-bold text-center">
+                Precision Auto Performance &amp; Audio
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6 font-label-mono text-label-mono">
+                <a class="text-on-secondary-container hover:underline" href="index.html">Home</a>
+                <a class="text-on-secondary-container hover:underline" href="about.html">About Us</a>
+                <a class="text-on-secondary-container hover:underline" href="services.html">Products &amp; Services</a>
+                <a class="text-on-secondary-container hover:underline" href="enquiry.html">Fitment Enquiry</a>
+                <a class="text-primary underline" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container max-w-3xl mt-4">
+                25 Melville Road, Pelham, Pietermaritzburg, KwaZulu-Natal | Phone: +27 (0)33 592 8367 | Email: precisionpmb@gmail.com
+            </div>
+            <div class="text-center font-label-mono text-label-mono text-on-secondary-container text-xs">
+                &copy; 2026 Precision Auto Performance &amp; Audio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet Map Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const workshopCoords = [-29.63238, 30.39347];
+            const map = L.map('workshop-map').setView(workshopCoords, 17);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            const marker = L.marker(workshopCoords).addTo(map);
+            marker.bindPopup(`
+                <div style="font-family: 'Geist', sans-serif; color: #000;">
+                    <strong>Precision Auto Performance &amp; Audio</strong><br>
+                    25 Melville Road, Pelham<br>
+                    Pietermaritzburg, 3201<br>
+                    <small>Tel: +27 (0)33 592 8367</small>
+                </div>
+            `).openPopup();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
